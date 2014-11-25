@@ -13,7 +13,7 @@ function Game(player1, player2) {
 
 Game.prototype.pairs = {
                  'rock' : { 'beats' : 'scissors', 'alsoBeats' : 'lizard' },
-             'scissors' : { 'beats' : 'paper' },
+             'scissors' : { 'beats' : 'paper' , 'alsoBeats' : 'lizard' },
                 'paper' : { 'beats' : 'rock', 'alsoBeats' : 'spock' }
 };
 
