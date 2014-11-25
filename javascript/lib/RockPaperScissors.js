@@ -3,7 +3,7 @@ function Player(name) {
 };
 
 Player.prototype.picks = function(pick) {
-  var pick = pick
+  this.pick = pick
 };
 
 function Game(player1, player2) {
@@ -16,6 +16,9 @@ Game.prototype.winner = function(player1, player2) {
             'scissors' : 'paper',
                'paper' : 'rock' };
   if (PAIRS[this.player1.pick] == this.player2.pick) {
-  return this.player1;
-  };
+    return this.player1;
+  }
+  else {
+    return this.player2;
+  }
 };
