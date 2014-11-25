@@ -157,6 +157,22 @@ describe("Rock-Paper-Scissors", function() {
         
       });
 
+      it('should lose to rock', function(){
+
+        player1.picks('lizard');
+        player2.picks('rock');
+        expect(game.winner()).toBe(player2);
+
+      });
+
+      it('should lose to scissors', function(){
+
+        player1.picks('lizard');
+        player2.picks('scissors');
+        expect(game.winner()).toBe(player2);
+        
+      });
+
     });
 
   });
