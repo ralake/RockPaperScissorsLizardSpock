@@ -12,19 +12,17 @@ function Game(player1, player2) {
 };
 
 Game.prototype.pairs = {
-                 'rock' : 'scissors',
-             'scissors' : 'paper',
-                'paper' : 'rock'
+                 'rock' : { 'beats' : 'scissors', 'beats2' : 'lizard' },
+             'scissors' : { 'beats' : 'paper' },
+                'paper' : { 'beats' : 'rock' }
 };
 
 Game.prototype.winner = function() {
 
 if(this.player1.pick === this.player2.pick) { return null; }
 
-  if (this.pairs[this.player1.pick] === this.player2.pick) {
+  if (this.pairs[this.player1.pick]['beats'] === this.player2.pick || this.pairs[this.player1.pick]['beats2']  === this.player2.pick) {
     return this.player1;
-  }
-  else {
+  };
     return this.player2;
-  }
 };
