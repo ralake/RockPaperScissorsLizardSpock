@@ -11,11 +11,14 @@ function Game(player1, player2) {
   this.player2 = player2;
 };
 
-Game.prototype.winner = function(player1, player2) {
-  var PAIRS = { 'rock' : 'scissors',
-            'scissors' : 'paper',
-               'paper' : 'rock' };
-  if (PAIRS[this.player1.pick] == this.player2.pick) {
+Game.prototype.pairs = {
+                 'rock' : 'scissors',
+             'scissors' : 'paper',
+                'paper' : 'rock'
+};
+
+Game.prototype.winner = function() {
+  if (this.pairs[this.player1.pick] === this.player2.pick) {
     return this.player1;
   }
   else {
