@@ -137,6 +137,22 @@ describe("Rock-Paper-Scissors", function() {
 
         });
 
+        it('should lose to paper', function() {
+
+          player1.picks('spock');
+          player2.picks('paper');
+          expect(game.winner()).toBe(player2);
+
+        });
+
+        it('should lose to lizard', function() {
+
+          player1.picks('spock');
+          player2.picks('lizard');
+          expect(game.winner()).toBe(player2);
+          
+        });
+
     });
 
     describe('lizard', function() {
@@ -157,7 +173,7 @@ describe("Rock-Paper-Scissors", function() {
         
       });
 
-      it('should lose to rock', function(){
+      it('should lose to rock', function() {
 
         player1.picks('lizard');
         player2.picks('rock');
@@ -165,12 +181,12 @@ describe("Rock-Paper-Scissors", function() {
 
       });
 
-      it('should lose to scissors', function(){
+      it('should lose to scissors', function() {
 
         player1.picks('lizard');
         player2.picks('scissors');
         expect(game.winner()).toBe(player2);
-        
+
       });
 
     });
