@@ -14,7 +14,8 @@ function Game(player1, player2) {
 Game.prototype.pairs = {
                  'rock' : { 'beats' : 'scissors', 'alsoBeats' : 'lizard' },
              'scissors' : { 'beats' : 'paper' , 'alsoBeats' : 'lizard' },
-                'paper' : { 'beats' : 'rock', 'alsoBeats' : 'spock' }
+                'paper' : { 'beats' : 'rock', 'alsoBeats' : 'spock' },
+                'spock' : { 'beats' : 'scissors' , 'alsoBeats' : 'rock' }
 };
 
 Game.prototype.winner = function() {
