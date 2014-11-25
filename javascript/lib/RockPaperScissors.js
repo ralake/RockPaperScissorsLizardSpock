@@ -15,7 +15,8 @@ Game.prototype.pairs = {
                  'rock' : { 'beats' : 'scissors', 'alsoBeats' : 'lizard' },
              'scissors' : { 'beats' : 'paper' , 'alsoBeats' : 'lizard' },
                 'paper' : { 'beats' : 'rock', 'alsoBeats' : 'spock' },
-                'spock' : { 'beats' : 'scissors' , 'alsoBeats' : 'rock' }
+                'spock' : { 'beats' : 'scissors' , 'alsoBeats' : 'rock' },
+               'lizard' : { 'beats' : 'spock', 'alsoBeats' : 'paper' }
 };
 
 Game.prototype.winner = function() {
