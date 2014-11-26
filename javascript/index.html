@@ -1,14 +1,15 @@
 <!doctype>
 <html>
+<center>
   <head>
     <title>Rock Paper Scissors Lizard Spock</title>
-    <!-- <link rel="stylesheet" href="animate.css"> -->
+    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="public/css/stylesheet.css">
   </head>
   <body>
     <h1>Rock Paper Scissors Lizard Spock</h1>
     <div class='choices'>
-      <img src="public/images/rock.png" data-pick='rock'>
+      <img class="animated pulse" src="public/images/rock.png" data-pick='rock'>
       <img src="public/images/paper.png" data-pick='paper'>
       <img src="public/images/scissors.png" data-pick='scissors'>
       <img src="public/images/lizard.png" data-pick='lizard'>
@@ -31,7 +32,7 @@
 
       Lakey.randomPick();
 
-      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(2000)
+      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(1000);
       $('ul li:nth-child(5)').fadeOut(1000, function() {
         $(this).remove(); 
       });
@@ -44,6 +45,7 @@
     </script>
 
   </body>
+  </center>
 </html>
 
 

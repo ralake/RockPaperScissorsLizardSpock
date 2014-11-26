@@ -1,11 +1,12 @@
 body {
   font-family: 'horror';
   font-size: 24pt;
-  margin: 15px 0 0 30px;
+  margin: 1% 1% 1% 1%;
   background-image: url('../images/grim.gif');
   background-size: 100%;
   color: #800000;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+
 }
 
 @font-face {
@@ -13,13 +14,10 @@ body {
   src: url('../fonts/DoubleFeature20.ttf');
 }
 
-/* h1, {
-  font-family: 'horror';
-}*/
-
 .choices img {
   width: 15%;
-  margin-right: 2.5%;
+  margin-right: auto;
+  margin-left: auto;
   cursor: pointer;
   opacity: 0.50;
   margin: auto;
@@ -34,7 +32,6 @@ h2, h3 {
   font-family: 'horror';
   text-transform: capitalize;
   color: red;
-  margin: auto;
 }
 
 #results {
@@ -50,7 +47,9 @@ h2, h3 {
   text-shadow: -2px 0 #B20000, 0 2px #B20000, 2px 0 #B20000, 0 -2px #B20000;
   border-radius: 8px;
   padding: 5px;
-  width: 80%;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 10px;
   display: none;
 }
