@@ -213,11 +213,6 @@ describe("Rock-Paper-Scissors:", function() {
 
   });
 
-  describe('', function(){
-    describe('', function(){
-
-    });
-  });
   describe('winning messages', function() {
 
     describe('when player 1 wins', function() {
@@ -227,7 +222,9 @@ describe("Rock-Paper-Scissors:", function() {
         player2.picks('scissors');
         expect(game.victoryMessage()).toBe("Tony's scissors slices Sam's lizard")
       });
+
     });
+    
   });
 
 });

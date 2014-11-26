@@ -6,13 +6,15 @@
     body {
       font-family: 'Helvetica Neue';
       margin: 15px 0 0 30px;
+      background-color: black;
+      color: red;
     }
 
     .choices img {
       width: 15%;
       margin-right: 2.5%;
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 0.75;
       transition: 1s all ease;
     }
 
@@ -22,6 +24,7 @@
 
     h2, h3 {
       text-transform: capitalize;
+      color: red;
     }
 
     #results {
@@ -58,12 +61,11 @@
       var Bleasey = new Player('Bleasey');
       var Lakey = new Player('Lakey');
       var game = new Game(Bleasey, Lakey);
-      var computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
       
 
       $('.choices img').on('click', function(){
       Bleasey.picks($(this).data('pick'));
-      Lakey.picks(computerPicks[Math.floor(Math.random() * computerPicks.length)]);
+      Lakey.randomPick();
       $('#results').prepend('<li>' + game.victoryMessage() + '</li>');
       });
     });
