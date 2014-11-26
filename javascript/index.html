@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Rock Paper Scissors Lizard Spock</title>
+    <link rel="stylesheet" href="animate.min.css">
     <style>
     body {
       font-family: 'Helvetica Neue';
@@ -32,13 +33,14 @@
     }
 
     #results li {
-      background: #999;
+      background-image: url('images/blood.png');
       color: #fff;
       font-size: 24px;
       border-radius: 8px;
       padding: 5px;
       width: 80%;
       margin-bottom: 10px;
+      display: none;
     }
     </style>
   </head>
@@ -62,11 +64,10 @@
       var Lakey = new Player('Lakey');
       var game = new Game(Bleasey, Lakey);
       
-
       $('.choices img').on('click', function(){
       Bleasey.picks($(this).data('pick'));
       Lakey.randomPick();
-      $('#results').prepend('<li>' + game.victoryMessage() + '</li>');
+      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(2000);
       });
     });
 

@@ -9,6 +9,7 @@ Player.prototype.picks = function(pick) {
 Player.prototype.randomPick = function() {
   var computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
   this.pick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
+  // chang computerPicks to be hash keys of pairs 
 };
 
 function Game(player1, player2) {
