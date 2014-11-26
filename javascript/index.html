@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Rock Paper Scissors Lizard Spock</title>
-    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="animate.css">
     <style>
     body {
       font-family: 'Helvetica Neue';
@@ -65,13 +65,51 @@
       var game = new Game(Bleasey, Lakey);
       
       $('.choices img').on('click', function(){
+
       Bleasey.picks($(this).data('pick'));
+
       Lakey.randomPick();
-      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(2000);
+
+        // $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(1000).fadeIn(2000);
+
+      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(2000)
+      $('ul li:nth-child(5)').fadeOut(1000, function() {
+        $(this).remove(); 
       });
+
+      });
+
+
     });
 
-    </script
+    </script>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
