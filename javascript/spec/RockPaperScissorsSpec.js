@@ -204,7 +204,8 @@ describe("Rock-Paper-Scissors:", function() {
           return game.winner();
         });
 
-        expect(drawGameResults).toEqual([null, null, null]);
+        expect(drawGameResults).toEqual(['Draw!','Draw!','Draw!']);
+        expect(game.victoryMessage()).toBe('Draw!')
 
       });
 
