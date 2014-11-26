@@ -36,7 +36,6 @@ Game.prototype.loser = function() {
 };
 
 Game.prototype.victoryMessage = function() {
-  // if (this.winner() === this.player1) {
-    return (this.winner().name + "'s" + " " + this.winner().pick + " " + this.loser().name + "'s" +  " " + this.loser().pick);
+    return (this.winner().name + "'s" + " " + this.winner().pick + " " + this.pairs[this.winner().pick][this.loser().pick] + " " + this.loser().name + "'s" +  " " + this.loser().pick);
 };
   

@@ -222,9 +222,9 @@ describe("Rock-Paper-Scissors:", function() {
     describe('when player 1 wins', function() {
 
       it('game should say how he won', function() {
-        player1.picks('rock');
+        player1.picks('lizard');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toBe("Sam's rock Tony's scissors")
+        expect(game.victoryMessage()).toBe("Tony's scissors slices Sam's lizard")
       });
     });
   });
