@@ -22,6 +22,7 @@ body {
   margin-right: 2.5%;
   cursor: pointer;
   opacity: 0.50;
+  margin: auto;
   transition: 1s all ease;
  }
 
@@ -33,6 +34,7 @@ h2, h3 {
   font-family: 'horror';
   text-transform: capitalize;
   color: red;
+  margin: auto;
 }
 
 #results {
