@@ -224,7 +224,7 @@ describe("Rock-Paper-Scissors:", function() {
       it('game should say how he won', function() {
         player1.picks('rock');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toBe('Sam rock')
+        expect(game.victoryMessage()).toBe("Sam's rock Tony's scissors")
       });
     });
   });
