@@ -27,3 +27,17 @@ Game.prototype.winner = function() {
   };
     return this.player2;
 };
+
+Game.prototype.loser = function() {
+  if (this.winner() === this.player1) {
+    return this.player2
+  };
+  return this.player1;
+};
+
+// Game.prototype.victoryMessage = function() {
+//   // if (Game.prototype.winner === this.player1) {
+//     return (this.winner().name + "'s" + " " + this.winner().pick); + ' ' player2.name + ' ' + player2.pick
+//   // };
+// };
+  
