@@ -30,7 +30,7 @@ Game.prototype.winner = function() {
 
 Game.prototype.loser = function() {
   if (this.winner() === this.player1) {
-    return this.player2
+    return this.player2;
   };
   return this.player1;
 };
