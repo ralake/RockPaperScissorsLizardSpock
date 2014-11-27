@@ -18,21 +18,24 @@
     <ul id="results">
     </ul>
 
+    <template id="list-item-template">
+      <li>{{ message }}</li>
+    </template>
+
     <script src='lib/RockPaperScissors.js'></script>
-    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
     <script>
     $(document).ready(function(){
       var Bleasey = new Player('Bleasey');
       var Lakey = new Player('Lakey');
       var game = new Game(Bleasey, Lakey);
-      
+
       $('.choices img').on('click', function(){
-
       Bleasey.picks($(this).data('pick'));
-
       Lakey.randomPick();
-
-      $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown(1000);
+      var rendered = Mustache.render($('#list-item-template').html(),{message: game.victoryMessage()});
+      $(rendered).prependTo('#results').slideDown(1000);
       $('ul li:nth-child(5)').fadeOut(1000, function() {
         $(this).remove(); 
       });
