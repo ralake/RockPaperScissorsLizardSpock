@@ -1,11 +1,12 @@
 function Player(name) {
   this.name = name;
-  this.timesPlayed = [];
 }
+
+Player.prototype.choicesMade = [];
 
 Player.prototype.picks = function(pick) {
   this.pick = pick;
-  this.timesPlayed.push(pick);
+  this.choicesMade.push(pick);
 };
 
 Player.prototype.randomPick = function() {
@@ -15,15 +16,15 @@ Player.prototype.randomPick = function() {
 
 favouritePick = function(arr){
   return arr.sort(function(a,b){
-    return arr.filter(function(v){ return v===a }).length
-          - arr.filter(function(v){ return v===b }).length
+    return arr.filter(function(v){ return v===a; }).length
+          - arr.filter(function(v){ return v===b; }).length;
   }).pop();
-}
+};
 
 botPick = function(player1, game) {
   var game = game;
-  var bot = favouritePick(player1.timesPlayed);
-  var choices = game.losingPairs[bot]
+  var bot = favouritePick(player1.choicesMade);
+  var choices = game.losingPairs[bot];
   var choice = choices[Math.floor(Math.random() * choices.length)];
   return choice;
 };
@@ -69,7 +70,7 @@ Game.prototype.victoryMessage = function() {
   if(this.player1.pick === this.player2.pick) { return 'Draw!'; }
   else {
     var verb = this.pairs[this.winner().pick][this.loser().pick];
-    return (this.winner().name + "'s" + " " + this.winner().pick + " " + verb + " " + this.loser().name +  " " + this.loser().pick);
+    return (this.winner().name + "'s" + " " + this.winner().pick + " " + verb + " " + this.loser().name + "'s" +  " " + this.loser().pick);
   }
 };
 

@@ -205,7 +205,7 @@ describe("Rock-Paper-Scissors:", function() {
         });
 
         expect(drawGameResults).toEqual(['Draw!','Draw!','Draw!']);
-        expect(game.victoryMessage()).toBe('Draw!')
+        expect(game.victoryMessage()).toBe('Draw!');
 
       });
 
@@ -220,7 +220,7 @@ describe("Rock-Paper-Scissors:", function() {
       it('game should say how he won', function() {
         player1.picks('lizard');
         player2.picks('scissors');
-        expect(game.victoryMessage()).toBe("Tony's scissors slices Sam's lizard")
+        expect(game.victoryMessage()).toBe("Tony's scissors slices Sam's lizard");
       });
 
     });
@@ -229,35 +229,21 @@ describe("Rock-Paper-Scissors:", function() {
 
   describe('bot develops a strategy', function() {
 
-    describe('when a player clicks', function(){
-
-      it('played count increases by 1', function() {
-        player1.picks('rock');
-        expect(player1.timesPlayed).toEqual(['rock'])
-      });
-    });
-
     describe('bot calculates choice based on other players choice history', function() {
 
       it('knows the most frequently used weapon of the other player', function(){
+        player1.choicesMade = []
         player1.picks('rock');
         player1.picks('rock');
         player1.picks('scissors');
-        expect(favouritePick(player1.timesPlayed)).toEqual('rock')
-      });
-
-      it('bot becomes self aware and fights back', function() {
-        player1.picks('rock');
-        player1.picks('rock');
-        player1.picks('scissors');
-        expect(botPick(player1, game)).toEqual('paper')
+        console.log(player1.choicesMade)
+        expect(favouritePick(player1.choicesMade)).toEqual('rock');
       });
     });
 
   });
 
 });
-
 
 
 
