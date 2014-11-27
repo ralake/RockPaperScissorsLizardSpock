@@ -236,13 +236,55 @@ describe("Rock-Paper-Scissors:", function() {
       });
     });
 
-    describe('bot can see how many times a player has used a specific weapon', function() {
-      it('counts weapon choices', function(){
+    describe('bot knows how many times a player has used a specific weapon', function() {
+
+      it('count specific weapon choices, made by player', function(){
         player1.picks('rock');
         player1.picks('rock');
         expect(player1.choiceFrequency('rock')).toEqual(2)
       });
+
+      it('if player chooses rock, on next turn bot picks paper', function() {
+        player1.picks('rock');
+        player1.picks('rock');
+        player1.picks('rock');
+        player1.picks('scissors');
+        expect(favouritePick(player1.timesPlayed)).toEqual('rock')
+        expect(botPick(player1, game)).toEqual('spock')
+      });
     });
+
   });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

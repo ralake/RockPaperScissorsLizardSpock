@@ -9,7 +9,7 @@ Player.prototype.picks = function(pick) {
 };
 
 Player.prototype.randomPick = function() {
-  var computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+   this.computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
   this.pick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
   // chang computerPicks to be hash keys of pairs 
 };
@@ -25,6 +25,21 @@ Player.prototype.choiceFrequency = function(pick){
   return count
 };
 
+favouritePick = function(arr){
+  return arr.sort(function(a,b){
+    return arr.filter(function(v){ return v===a }).length
+          - arr.filter(function(v){ return v===b }).length
+  }).pop();
+}
+
+botPick = function(player1, game) {
+  var game = game;
+  var bot = favouritePick(player1.timesPlayed);
+  var choices = game.losingPairs[bot]
+  var choice = choices[Math.floor(Math.random() * choices.length)];
+  return choice;
+};
+
 function Game(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
@@ -36,6 +51,14 @@ Game.prototype.pairs = {
                 paper: { rock: 'covers', spock: 'disproves' },
                 spock: { scissors: 'smashes' , rock: 'vaporises' },
                lizard: { spock: 'poisons', paper: 'eats' }
+};
+
+Game.prototype.losingPairs = {
+    rock:     ['paper', 'spock'],
+    scissors: ['rock', 'spock'],
+    paper:    ['scissors', 'lizard'],
+    spock:    ['paper', 'lizard'],
+    lizard:   ['scissors', 'rock']
 };
 
 Game.prototype.winner = function() {
