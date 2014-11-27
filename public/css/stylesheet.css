@@ -1,6 +1,6 @@
 body {
   font-family: 'horror';
-  font-size: 24pt;
+  font-size: 20pt;
   margin: 1% 1% 1% 1%;
   background-image: url('../images/grim.gif');
   background-size: 100%;
@@ -30,8 +30,10 @@ body {
 
 h2, h3 {
   font-family: 'horror';
-  text-transform: capitalize;
-  color: red;
+  font-size: 20pt;
+  margin: 1% 1% 1% 1%;
+  color: #800000;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 #results {
@@ -43,10 +45,11 @@ h2, h3 {
   height: 50;
   background-image: url('../images/blood.png');
   color: #281815;
-  font-size: 40px;
+  font-size: 30px;
   text-shadow: -2px 0 #B20000, 0 2px #B20000, 2px 0 #B20000, 0 -2px #B20000;
   border-radius: 8px;
   padding: 5px;
+  padding-top: 20px;
   width: 70%;
   margin-right: auto;
   margin-left: auto;

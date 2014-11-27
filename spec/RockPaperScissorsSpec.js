@@ -228,29 +228,29 @@ describe("Rock-Paper-Scissors:", function() {
   });
 
   describe('bot develops a strategy', function() {
+
     describe('when a player clicks', function(){
+
       it('played count increases by 1', function() {
         player1.picks('rock');
         expect(player1.timesPlayed).toEqual(['rock'])
-        expect(player1.pickCount()).toEqual(1)
       });
     });
 
-    describe('bot knows how many times a player has used a specific weapon', function() {
+    describe('bot calculates choice based on other players choice history', function() {
 
-      it('count specific weapon choices, made by player', function(){
-        player1.picks('rock');
-        player1.picks('rock');
-        expect(player1.choiceFrequency('rock')).toEqual(2)
-      });
-
-      it('if player chooses rock, on next turn bot picks paper', function() {
-        player1.picks('rock');
+      it('knows the most frequently used weapon of the other player', function(){
         player1.picks('rock');
         player1.picks('rock');
         player1.picks('scissors');
         expect(favouritePick(player1.timesPlayed)).toEqual('rock')
-        expect(botPick(player1, game)).toEqual('spock')
+      });
+
+      it('bot becomes self aware and fights back', function() {
+        player1.picks('rock');
+        player1.picks('rock');
+        player1.picks('scissors');
+        expect(botPick(player1, game)).toEqual('paper')
       });
     });
 

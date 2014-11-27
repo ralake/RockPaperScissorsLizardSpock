@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  var Bleasey = new Player('Bleasey');
-  var Lakey = new Player('Lakey');
-  var game = new Game(Bleasey, Lakey);
+  var your = new Player('your');
+  var Death = new Player('Death');
+  var game = new Game(your, Death);
 
   var remove = function (){
     $(this).remove();
@@ -14,17 +14,15 @@ $(document).ready(function(){
   };
 
   var makePicks = function (pick){
-    Bleasey.picks(pick);
-    Lakey.randomPick();
+    your.picks(pick);
+    Death.picks(botPick(your, game));
   };
 
   $('.choices img').on('click', function(){
     makePicks($(this).data('pick'));
     $(rendered(game)).prependTo('#results').slideDown(1000);
-    $('li:nth-child(5)').fadeOut(1000,remove);
+    $('li:nth-child(4)').fadeOut(1000,remove);
   });
 
 });
-
-// We need something that collects information on clicks
 

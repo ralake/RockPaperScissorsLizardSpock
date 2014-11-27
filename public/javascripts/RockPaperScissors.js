@@ -11,18 +11,6 @@ Player.prototype.picks = function(pick) {
 Player.prototype.randomPick = function() {
    this.computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
   this.pick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
-  // chang computerPicks to be hash keys of pairs 
-};
-
-Player.prototype.pickCount = function() {
-  return this.timesPlayed.length;
-};
-
-Player.prototype.choiceFrequency = function(pick){
-  var count = this.timesPlayed.filter(function(value) {
-    return value === pick;
-  }).length
-  return count
 };
 
 favouritePick = function(arr){
@@ -81,7 +69,7 @@ Game.prototype.victoryMessage = function() {
   if(this.player1.pick === this.player2.pick) { return 'Draw!'; }
   else {
     var verb = this.pairs[this.winner().pick][this.loser().pick];
-    return (this.winner().name + "'s" + " " + this.winner().pick + " " + verb + " " + this.loser().name + "'s" +  " " + this.loser().pick);
+    return (this.winner().name + "'s" + " " + this.winner().pick + " " + verb + " " + this.loser().name +  " " + this.loser().pick);
   }
 };
 
