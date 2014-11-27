@@ -227,4 +227,14 @@ describe("Rock-Paper-Scissors:", function() {
     
   });
 
+  describe('bot develops a strategy', function() {
+    describe('when a player clicks', function(){
+      it('played count increases by 1', function() {
+        player1.picks('rock');
+        expect(player1.timesPlayed).toEqual(['rock'])
+        expect(player1.pickCount()).toEqual(1)
+      });
+    });
+  });
+
 });

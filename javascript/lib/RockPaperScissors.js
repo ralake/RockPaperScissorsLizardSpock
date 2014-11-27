@@ -1,15 +1,21 @@
 function Player(name) {
   this.name = name;
+  this.timesPlayed = [];
 };
 
 Player.prototype.picks = function(pick) {
   this.pick = pick
+  this.timesPlayed.push(pick);
 };
 
 Player.prototype.randomPick = function() {
   var computerPicks = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
   this.pick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
   // chang computerPicks to be hash keys of pairs 
+};
+
+Player.prototype.pickCount = function() {
+  return this.timesPlayed.length
 };
 
 function Game(player1, player2) {
@@ -48,4 +54,5 @@ Game.prototype.victoryMessage = function() {
     return (this.winner().name + "'s" + " " + this.winner().pick + " " + verb + " " + this.loser().name + "'s" +  " " + this.loser().pick);
   }
 };
+
   

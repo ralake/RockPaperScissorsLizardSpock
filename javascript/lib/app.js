@@ -25,3 +25,6 @@ $(document).ready(function(){
   });
 
 });
+
+// We need something that collects information on clicks
+
