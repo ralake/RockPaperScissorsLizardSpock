@@ -235,6 +235,14 @@ describe("Rock-Paper-Scissors:", function() {
         expect(player1.pickCount()).toEqual(1)
       });
     });
+
+    describe('bot can see how many times a player has used a specific weapon', function() {
+      it('counts weapon choices', function(){
+        player1.picks('rock');
+        player1.picks('rock');
+        expect(player1.choiceFrequency('rock')).toEqual(2)
+      });
+    });
   });
 
 });
