@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  var your = new Player('your');
+  var Alex = new Player('Alex');
   var Death = new Player('Death');
-  var game = new Game(your, Death);
+  var game = new Game(Alex, Death);
 
   var remove = function (){
     $(this).remove();
@@ -14,8 +14,8 @@ $(document).ready(function(){
   };
 
   var makePicks = function (pick){
-    your.picks(pick);
-    Death.picks(botPick(your, game));
+    Alex.picks(pick);
+    Death.picks(botPick(Alex, game));
   };
 
   $('.choices img').on('click', function(){
